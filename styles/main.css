@@ -1,0 +1,104 @@
+/* --- RESET & BASE --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    background-color: #ffffff;
+    color: #000000;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* --- LAYOUT UTILITIES --- */
+.container {
+    width: 100%;
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* MAIN GRID: 3 COLUMNS */
+.grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 40px;
+    row-gap: 0px;
+    margin-bottom: 100px;
+    align-items: start;
+    width: 100%;
+}
+
+/* --- GRID AREAS --- */
+.bio-section {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.collaborators-section {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.meta-section {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+/* ROW 2: VISUAL & CONTACT */
+.visual-feature {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+    margin-top: 120px;
+}
+
+.contact-section {
+    grid-column: 3;
+    grid-row: 2;
+    margin-top: 120px;
+}
+
+/* --- MOBILE --- */
+@media (max-width: 900px) {
+    .grid-layout {
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    .bio-section {
+        order: 1;
+        width: 100%;
+    }
+
+    .collaborators-section {
+        order: 2;
+        width: 100%;
+    }
+
+    .meta-section {
+        order: 3;
+        width: 100%;
+    }
+
+    .visual-feature {
+        order: 4;
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .contact-section {
+        order: 5;
+        width: 100%;
+    }
+}

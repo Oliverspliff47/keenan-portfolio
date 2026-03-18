@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keenan Oliver - About</title>
+    <style>
+        /* --- RESET & BASE --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+            font-family: 'Courier New', Courier, 'Menlo', monospace;
+            font-size: 13px;
+            /* Desktop Size */
+            line-height: 1.4;
+        }
+
+        /* --- LAYOUT UTILITIES --- */
+        .container {
+            width: 100%;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        /* MAIN GRID: 3 COLUMNS */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            column-gap: 40px;
+            row-gap: 0px;
+            margin-bottom: 100px;
+            align-items: start;
+            width: 100%;
+        }
+
+        /* --- GRID AREAS --- */
+        .bio-section {
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+        .collaborators-section {
+            grid-column: 2;
+            grid-row: 1;
+        }
+
+        .meta-section {
+            grid-column: 3;
+            grid-row: 1;
+        }
+
+        /* ROW 2: VISUAL & CONTACT */
+        .visual-feature {
+            grid-column: 1 / span 2;
+            grid-row: 2;
+            margin-top: 120px;
+        }
+
+        .contact-section {
+            grid-column: 3;
+            grid-row: 2;
+            margin-top: 120px;
+        }
+
+        /* --- TYPOGRAPHY & ALIGNMENT --- */
+        h2 {
+            font-size: 13px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 25px;
+            color: #000;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            border-bottom: 1px solid #000;
+            padding-bottom: 10px;
+        }
+
+        h2 span.section-num {
+            opacity: 0.4;
+            margin-right: 8px;
+            font-weight: normal;
+            white-space: nowrap;
+        }
+
+        .bio-section h2 {
+            justify-content: flex-start;
+        }
+
+        .collaborators-section h2,
+        .meta-section h2 {
+            justify-content: space-between;
+        }
+
+        .contact-section h2 {
+            justify-content: space-between;
+        }
+
+        p {
+            margin-bottom: 20px;
+            max-width: 100%;
+            text-align: justify;
+            text-align-last: left;
+            -webkit-hyphens: none;
+            -moz-hyphens: none;
+            hyphens: none;
+        }
+
+        strong {
+            font-weight: normal;
+            border-bottom: 1px solid #000;
+        }
+
+        /* --- LIST STYLES --- */
+        ul {
+            list-style: none;
+            width: 100%;
+        }
+
+        li {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 8px;
+            border-bottom: 1px solid #f0f0f0;
+            padding-bottom: 6px;
+            width: 100%;
+        }
+
+        li span.num {
+            opacity: 0.4;
+            margin-right: 10px;
+            min-width: 20px;
+            font-size: 11px;
+            flex-shrink: 0;
+        }
+
+        li span.item {
+            font-weight: bold;
+            flex-grow: 1;
+        }
+
+        .collaborators-section li {
+            justify-content: space-between;
+        }
+
+        .collaborators-section li span.item {
+            text-align: right;
+        }
+
+        .meta-section li {
+            justify-content: space-between;
+        }
+
+        .meta-section .cap-content {
+            text-align: right;
+        }
+
+        /* --- CAPABILITIES --- */
+        .capabilities li {
+            margin-bottom: 16px;
+            align-items: baseline;
+        }
+
+        .capabilities .cap-title {
+            display: block;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .capabilities .cap-desc {
+            display: block;
+            opacity: 0.6;
+            font-size: 12px;
+            line-height: 1.3;
+        }
+
+        /* --- LINKS --- */
+        a.email-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: #000;
+            text-decoration: none;
+            border-bottom: 1px solid #000;
+            transition: all 0.2s ease;
+        }
+
+        a.email-link:hover {
+            background-color: #000;
+            color: #fff;
+        }
+
+        /* --- VISUAL FEATURE --- */
+        .visual-feature img {
+            width: 100%;
+            height: auto;
+            display: block;
+            mix-blend-mode: multiply;
+            /* Blends the white background of the GIF seamlessly into the page */
+        }
+
+        /* --- CONTACT SECTION --- */
+        .contact-section {
+            border-top: 4px solid #000;
+            padding-top: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-section p {
+            font-size: 11px;
+            opacity: 0.6;
+            text-align: left;
+            margin-bottom: 10px;
+        }
+
+        .contact-section a.email-link {
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+
+        .live-status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 11px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #00ff00;
+            flex-shrink: 0;
+            animation: pulse-glow 1.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+
+            0%,
+            100% {
+                opacity: 1;
+                box-shadow: 0 0 0 0 rgba(0, 255, 0, 0.7);
+            }
+
+            50% {
+                opacity: 0.7;
+                box-shadow: 0 0 8px 2px rgba(0, 255, 0, 0.3);
+            }
+        }
+
+        /* --- MOBILE --- */
+        @media (max-width: 900px) {
+            body {
+                font-size: 14px;
+            }
+
+            .grid-layout {
+                display: flex;
+                flex-direction: column;
+                gap: 60px;
+            }
+
+            .container {
+                padding: 20px;
+            }
+
+            .bio-section {
+                order: 1;
+                width: 100%;
+            }
+
+            .collaborators-section {
+                order: 2;
+                width: 100%;
+            }
+
+            .meta-section {
+                order: 3;
+                width: 100%;
+            }
+
+            .visual-feature {
+                order: 4;
+                width: 100%;
+                margin-top: 0;
+            }
+
+            .contact-section {
+                order: 5;
+                width: 100%;
+            }
+
+            .collaborators-section h2 {
+                justify-content: space-between !important;
+            }
+
+            .collaborators-section li {
+                justify-content: space-between !important;
+            }
+
+            .collaborators-section li span.item {
+                text-align: right !important;
+            }
+
+            .meta-section li {
+                justify-content: space-between !important;
+                flex-wrap: nowrap !important;
+                align-items: baseline;
+            }
+
+            .meta-section .cap-content {
+                text-align: right !important;
+                width: auto !important;
+                margin-top: 0 !important;
+                padding-left: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="grid-layout">
+
+            <!-- ROW 1, COL 1: PROFILE -->
+            <section class="bio-section">
+                <h2><span class="section-num">001 /</span> <span>Profile</span></h2>
+                <div>
+                    <p>Keenan Oliver is a South African interdisciplinary designer and cultural producer. His practice
+                        operates as a cultural engine for world-building, working across design, publishing, and
+                        collaborative projects to explore the intersections of art, design, fashion, architecture, film,
+                        and object-making.</p>
+                    <p>Through visual systems, editorial design, and creative direction, he produces work that both
+                        shapes and documents contemporary creative practice. Alongside client and institutional
+                        collaborations, his work extends into publications, exhibitions, and cultural programming,
+                        forming an evolving archive of contemporary culture.</p>
+                    <p>Rooted in South Africa and engaged globally, his practice connects disciplines, collaborators,
+                        and contexts, positioning design as both a tool for production and a method of cultural
+                        documentation.</p>
+                </div>
+            </section>
+
+            <!-- ROW 1, COL 2: COMMISSIONS -->
+            <section class="collaborators-section">
+                <h2><span class="section-num">002 /</span> <span>Selected Commissions</span></h2>
+                <ul>
+                    <li><span class="num">01</span> <span class="item">Zeitz MOCAA</span></li>
+                    <li><span class="num">02</span> <span class="item">NBA Africa</span></li>
+                    <li><span class="num">03</span> <span class="item">Red Bull</span></li>
+                    <li><span class="num">04</span> <span class="item">BMW Art Generation</span></li>
+                    <li><span class="num">05</span> <span class="item">SuperSport</span></li>
+                    <li><span class="num">06</span> <span class="item">Tony Gum</span></li>
+                    <li><span class="num">07</span> <span class="item">University of Cape Town</span></li>
+                    <li><span class="num">08</span> <span class="item">Babbi Deli & Bar</span></li>
+                    <li><span class="num">09</span> <span class="item">Standard Bank Arts</span></li>
+                </ul>
+            </section>
+
+            <!-- ROW 1, COL 3: DISCIPLINES -->
+            <section class="meta-section">
+                <h2><span class="section-num">003 /</span> <span>Disciplines</span></h2>
+                <ul class="capabilities">
+                    <li>
+                        <span class="num">01</span>
+                        <div class="cap-content">
+                            <span class="cap-title">Art Direction</span>
+                            <span class="cap-desc">Creative Direction, Visual Strategy, Concept Development, Image
+                                Direction</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="num">02</span>
+                        <div class="cap-content">
+                            <span class="cap-title">Brand Identity</span>
+                            <span class="cap-desc">Visual Identity Systems, Brand Strategy, Logo Design, Brand
+                                Standards</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="num">03</span>
+                        <div class="cap-content">
+                            <span class="cap-title">Spatial Design</span>
+                            <span class="cap-desc">Exhibition Graphics, Event Identity, Signage & Wayfinding,
+                                Environmental Design</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="num">04</span>
+                        <div class="cap-content">
+                            <span class="cap-title">Digital Interface</span>
+                            <span class="cap-desc">UI Design, Digital Campaigns, Interactive Prototypes, Social Media
+                                Systems</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="num">05</span>
+                        <div class="cap-content">
+                            <span class="cap-title">Print Media</span>
+                            <span class="cap-desc">Editorial Design, Publications, Catalogues, Book Design</span>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- ROW 2, COL 1 & 2: VISUAL FEATURE -->
+            <div class="visual-feature">
+                <img src="BrowserPreview_tmp.gif" alt="Keenan Oliver Archive">
+            </div>
+
+            <!-- ROW 2, COL 3: CONTACT -->
+            <section class="contact-section">
+                <h2><span class="section-num">004 /</span> <span>Contact</span></h2>
+                <p>For commissions and contract roles:</p>
+                <a href="mailto:keenanoliver.graphics@gmail.com" class="email-link">keenanoliver.graphics@gmail.com</a>
+                <div class="live-status">
+                    <div class="status-dot"></div>
+                    <span>Currently Booking for Q1 2026</span>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
