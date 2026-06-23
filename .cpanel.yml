@@ -1,0 +1,8 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/keenano1/public_html
+    - /bin/cp index.html $DEPLOYPATH
+    - /bin/cp index_merged.html $DEPLOYPATH
+    - /bin/cp -R assets $DEPLOYPATH
+    - /bin/cp -R styles $DEPLOYPATH
