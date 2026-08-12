@@ -119,6 +119,19 @@ export default function Home() {
             </ol>
           </div>
 
+          <figure className="portrait-plate">
+            <img
+              src="/keenan-oliver-office-portrait.png"
+              alt="Photocopied self-portrait of Keenan Oliver with the word Office and assembled graphic elements"
+              width="1448"
+              height="2048"
+            />
+            <figcaption>
+              <span>Fig. 01</span>
+              <span>Self-portrait / Office</span>
+            </figcaption>
+          </figure>
+
           <aside className="studio-note">
             <p className="section-heading">Office</p>
             <p>
