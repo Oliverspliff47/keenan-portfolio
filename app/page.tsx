@@ -2,7 +2,7 @@ const statementSections = [
   {
     id: "practice",
     number: "01",
-    label: "Practice",
+    label: "Position",
     text: (
       <>
         My practice produces <strong>visual systems</strong>, publications,
@@ -32,7 +32,7 @@ const statementSections = [
   {
     id: "archive",
     number: "03",
-    label: "Archive",
+    label: "Context",
     text: (
       <>
         This approach comes from an interest in the instability of the archive,
@@ -49,7 +49,7 @@ const statementSections = [
   {
     id: "infrastructure",
     number: "04",
-    label: "Infrastructure",
+    label: "Proposition",
     text: (
       <>
         What matters to me is not preservation for its own sake, but what
@@ -64,12 +64,12 @@ const statementSections = [
   },
 ];
 
-const indexItems = [
-  ["001", "Visual systems", "Identity / Direction", "practice"],
-  ["002", "Publications", "Editing / Sequence", "method"],
-  ["003", "Images", "Production / Circulation", "archive"],
-  ["004", "Objects", "Material / Memory", "infrastructure"],
-  ["005", "Spatial interventions", "Site / Encounter", "infrastructure"],
+const fieldsOfWork = [
+  ["001", "Visual identity & systems", "Strategy / Identity", "practice"],
+  ["002", "Publications & editorial", "Editing / Publishing", "method"],
+  ["003", "Image direction & production", "Art direction / Image-making", "archive"],
+  ["004", "Objects & editions", "Material / Edition", "infrastructure"],
+  ["005", "Spatial communication & environments", "Exhibition / Wayfinding", "infrastructure"],
 ];
 
 export default function Home() {
@@ -79,7 +79,7 @@ export default function Home() {
         <a className="wordmark" href="#top" aria-label="Keenan Oliver, home">
           Keenan Oliver
         </a>
-        <p>Interdisciplinary designer</p>
+        <p>Design / Direction / Publishing</p>
         <p className="place">Cape Town, South Africa</p>
       </header>
 
@@ -98,15 +98,15 @@ export default function Home() {
           ))}
         </section>
 
-        <section className="lower-grid" aria-label="Practice index and contact">
+        <section className="lower-grid" aria-label="Fields of work and contact">
           <div className="index-block">
             <div className="section-heading">
-              <span>Practice Index</span>
+              <span>Fields of Work</span>
               <span aria-hidden="true">↓</span>
             </div>
 
             <ol className="index-list">
-              {indexItems.map(([number, title, detail, anchor]) => (
+              {fieldsOfWork.map(([number, title, detail, anchor]) => (
                 <li key={number}>
                   <span className="item-number">{number}</span>
                   <a href={`#${anchor}`}>
@@ -120,11 +120,11 @@ export default function Home() {
           </div>
 
           <aside className="studio-note">
-            <p className="section-heading">Studio</p>
+            <p className="section-heading">Office</p>
             <p>
               Founder of <a href="https://artefactsoffice.com">Artefacts Office</a>,
-              a design practice operating across brand strategy, visual culture
-              and spatial communication.
+              an independent design office working through strategy, identity,
+              publishing, image-making and spatial communication.
             </p>
           </aside>
 
