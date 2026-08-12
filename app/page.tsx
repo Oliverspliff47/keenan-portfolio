@@ -81,7 +81,6 @@ export default function Home() {
         </a>
         <p>Interdisciplinary designer</p>
         <p className="place">Cape Town, South Africa</p>
-        <p className="year">1993—</p>
       </header>
 
       <div id="top" className="page-shell">
