@@ -84,19 +84,34 @@ export default function Home() {
       </header>
 
       <div id="top" className="page-shell">
-        <section className="statement" aria-labelledby="statement-title">
-          <h1 id="statement-title" className="sr-only">Practice statement</h1>
+        <div className="opening-spread">
+          <section className="statement" aria-labelledby="statement-title">
+            <h1 id="statement-title" className="sr-only">Practice statement</h1>
 
-          {statementSections.map((section) => (
-            <article className="statement-row" id={section.id} key={section.id}>
-              <div className="statement-key" aria-hidden="true">
-                <span>{section.number}</span>
-                <span>{section.label}</span>
-              </div>
-              <p>{section.text}</p>
-            </article>
-          ))}
-        </section>
+            {statementSections.map((section) => (
+              <article className="statement-row" id={section.id} key={section.id}>
+                <div className="statement-key" aria-hidden="true">
+                  <span>{section.number}</span>
+                  <span>{section.label}</span>
+                </div>
+                <p>{section.text}</p>
+              </article>
+            ))}
+          </section>
+
+          <figure className="portrait-plate">
+            <img
+              src="/keenan-oliver-office-portrait.png"
+              alt="Photocopied self-portrait of Keenan Oliver with the word Office and assembled graphic elements"
+              width="1448"
+              height="2048"
+            />
+            <figcaption>
+              <span>Fig. 01</span>
+              <span>Self-portrait / Office</span>
+            </figcaption>
+          </figure>
+        </div>
 
         <section className="lower-grid" aria-label="Fields of work and contact">
           <div className="index-block">
@@ -118,19 +133,6 @@ export default function Home() {
               ))}
             </ol>
           </div>
-
-          <figure className="portrait-plate">
-            <img
-              src="/keenan-oliver-office-portrait.png"
-              alt="Photocopied self-portrait of Keenan Oliver with the word Office and assembled graphic elements"
-              width="1448"
-              height="2048"
-            />
-            <figcaption>
-              <span>Fig. 01</span>
-              <span>Self-portrait / Office</span>
-            </figcaption>
-          </figure>
 
           <aside className="studio-note">
             <p className="section-heading">Office</p>
