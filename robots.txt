@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://keenanoliver.com/sitemap.xml
