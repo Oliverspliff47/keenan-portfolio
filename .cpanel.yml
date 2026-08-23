@@ -3,6 +3,11 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/keenano1/public_html
     - /bin/cp index.html $DEPLOYPATH
-    - /bin/cp index_merged.html $DEPLOYPATH
+    - /bin/cp robots.txt $DEPLOYPATH
+    - /bin/cp sitemap.xml $DEPLOYPATH
+    - /bin/cp site.webmanifest $DEPLOYPATH
     - /bin/cp -R assets $DEPLOYPATH
     - /bin/cp -R styles $DEPLOYPATH
+    - /bin/rm -f /home/keenano1/public_html/index_merged.html
+    - /bin/rm -f /home/keenano1/public_html/BrowserPreview_tmp.gif
+    - /bin/rm -f /home/keenano1/public_html/assets/BrowserPreview_tmp.gif
