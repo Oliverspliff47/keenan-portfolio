@@ -100,7 +100,8 @@ h1{max-width:none;margin:0;font-size:clamp(84px,15.5vw,240px);line-height:.72;le
 .caption{text-align:left;background:var(--page);border-color:var(--ink)}
 .spread{padding-top:64px}
 .spread-grid,.double{gap:8px}
-.photo{min-height:36vh;background:#ddd;border:1px solid var(--ink)}
+.photo{min-height:0;background:#ddd;border:1px solid var(--ink)}
+.photo img{display:block;width:100%;aspect-ratio:4/3;object-fit:contain;background:#ddd}
 .placeholder{max-width:34ch;color:#111;font-size:11px;line-height:1.15}
 .spread-note{max-width:none;margin:8px 0 0;padding:0 0 0 25%;text-align:left;font-size:13px}
 .conversation{max-width:none;margin:0;padding:96px 18px;display:grid;grid-template-columns:minmax(220px,1fr) minmax(0,2.2fr);column-gap:6vw}
@@ -119,7 +120,8 @@ h1{max-width:none;margin:0;font-size:clamp(84px,15.5vw,240px);line-height:.72;le
 .context-strip{background:var(--red);color:#000;border-top:1px solid #000;border-bottom:1px solid #000}
 .context-strip .label{color:#000}
 .statement{max-width:none;margin:0;padding:110px 18px;text-align:left;font-family:Arial,Helvetica,sans-serif;font-size:clamp(55px,8vw,125px);font-weight:900;line-height:.82}
-.full-image{min-height:42vh;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+.full-image{min-height:0;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);background:#ddd}
+.full-image img{display:block;width:100%;height:auto}
 .project-note{max-width:none;margin:0;padding:55px 18px 110px;grid-template-columns:1fr 2.2fr}
 .project-note p{max-width:900px;font-size:18px}
 .credits{max-width:none;margin:0;padding:95px 18px;border-top:1px solid var(--ink)}
@@ -133,7 +135,7 @@ h1{max-width:none;margin:0;font-size:clamp(84px,15.5vw,240px);line-height:.72;le
   .conversation{display:block;padding:64px 12px}.q{position:static;margin:48px 0 14px;padding-top:12px;border-top:1px solid var(--ink)}.q:first-child{margin-top:0}.a{font-size:20px}.a.serif{font-size:38px}
   .pull{padding:62px 12px}.project-intro{padding:80px 12px 42px}.project-intro h2{font-size:17vw}
   .project-facts{margin:0 12px}.double{padding:0 12px}.context-strip,.statement{padding-left:12px;padding-right:12px}
-  .photo,.double .photo{min-height:30vh}.full-image{min-height:34vh}
+  .photo,.double .photo,.full-image{min-height:0}
   .project-note{padding:45px 12px 80px}.credits{padding:70px 12px}.end{padding:75px 12px 28px}
 }
 </style>
@@ -167,10 +169,10 @@ h1{max-width:none;margin:0;font-size:clamp(84px,15.5vw,240px);line-height:.72;le
 
 <section class="spread">
   <div class="spread-grid">
-    <div class="photo"><span class="placeholder">IMAGE — PERSONAL ARCHIVE / EARLY DRAWINGS</span></div>
-    <div class="photo"><span class="placeholder">IMAGE — EARLY CAPE TOWN / PEOPLE / OBJECT</span></div>
+    <div class="photo"><img src="/assets/kaas-01.jpg" alt="Leaf Apparel photographic archive by Keenan Oliver" loading="lazy"></div>
+    <div class="photo"><img src="/assets/kaas-02.jpg" alt="Leaf Apparel photographic archive by Keenan Oliver" loading="lazy"></div>
   </div>
-  <p class="spread-note">“I picked up a pen and pencil when I was young and never really put them down.”</p>
+  <p class="spread-note">Leaf Apparel photographic archive / Photography: Keenan Oliver / Art direction: Mzonke Maloney / Model: Lukhanyo Ndongeni / Clothing: Leaf Apparel</p>
 </section>
 
 <section class="conversation" id="origin">
@@ -203,8 +205,8 @@ h1{max-width:none;margin:0;font-size:clamp(84px,15.5vw,240px);line-height:.72;le
 </section>
 
 <div class="double">
-  <div class="photo"><span class="placeholder">KAAS / MITCHELLS PLAIN / YOUR IMAGE</span></div>
-  <div class="photo"><span class="placeholder">KAAS / STYLING / PEOPLE / YOUR IMAGE</span></div>
+  <div class="photo"><img src="/assets/kaas-headwear-01.jpg" alt="KAAS headwear editorial photographed in Mitchells Plain" loading="lazy"></div>
+  <div class="photo"><img src="/assets/kaas-headwear-02.jpg" alt="KAAS headwear editorial photographed in Mitchells Plain" loading="lazy"></div>
 </div>
 <div class="caption">KAAS / Autodidacts &amp; Associates / Mitchells Plain / photography by Keenan Oliver / styling Lubabalo Nkobo &amp; Kaylynne Damonze</div>
 
@@ -228,10 +230,10 @@ h1{max-width:none;margin:0;font-size:clamp(84px,15.5vw,240px);line-height:.72;le
 </div>
 
 <section class="double">
-  <div class="photo"><span class="placeholder">BABBI — INTERIOR / COURTYARD / PEOPLE</span></div>
-  <div class="photo"><span class="placeholder">BABBI — RECORDS / NIGHT / DETAIL</span></div>
+  <div class="photo"><img src="/assets/babbi-logo.png" alt="Babbi logo and lightbox design by Artefacts Office" loading="lazy"></div>
+  <div class="photo"><img src="/assets/babbi-poster.png" alt="Babbi digital poster system by Artefacts Office" loading="lazy"></div>
 </section>
-<div class="caption">Babbi Deli &amp; Bar / 215 Bree Street / add your own archive and credits</div>
+<div class="caption">Babbi Deli &amp; Bar / Logo, lightbox and digital media / Artefacts Office c/o Keenan Oliver</div>
 
 <section class="conversation">
   <p class="q">LN: Babbi feels like the first time the practice really left the page.</p>
@@ -283,10 +285,10 @@ h1{max-width:none;margin:0;font-size:clamp(84px,15.5vw,240px);line-height:.72;le
 <section class="statement">Babbi was a room, but it was also a piece of Cape Town's cultural memory.</section>
 
 <section class="double">
-  <div class="photo"><span class="placeholder">BABBI — PEOPLE / DJ / LISTENING</span></div>
-  <div class="photo"><span class="placeholder">BABBI — FOOD / TABLE / OBJECTS</span></div>
+  <div class="photo"><img src="/assets/babbi-stamp.png" alt="Babbi stamp application designed by Artefacts Office" loading="lazy"></div>
+  <div class="photo"><img src="/assets/babbi-exterior.png" alt="Babbi exterior at 215 Bree Street" loading="lazy"></div>
 </section>
-<div class="caption">Keep this archive human: people, records, food, details, not only the finished identity.</div>
+<div class="caption">Babbi Deli &amp; Bar / Stamp and exterior / Brand architecture and visual direction: Artefacts Office c/o Keenan Oliver</div>
 
 <!-- LOST LIBRARIES -->
 <section class="project-intro" id="lost-libraries">
@@ -302,10 +304,10 @@ h1{max-width:none;margin:0;font-size:clamp(84px,15.5vw,240px);line-height:.72;le
 </div>
 
 <section class="double">
-  <div class="photo"><span class="placeholder">LOST LIBRARIES — COVER / OBJECT</span></div>
-  <div class="photo"><span class="placeholder">LOST LIBRARIES — SPREAD / DETAIL</span></div>
+  <div class="photo"><img src="/assets/lost-cover.jpg" alt="Front cover of Lost Libraries, Burnt Archives" loading="lazy"></div>
+  <div class="photo"><img src="/assets/lost-inserts.jpg" alt="Printed inserts from Lost Libraries, Burnt Archives" loading="lazy"></div>
 </section>
-<div class="caption">Lost Libraries, Burnt Archives / 2023 / book design by Keenan Oliver</div>
+<div class="caption">Lost Libraries, Burnt Archives / 2023 / Book design and layout: Artefacts Office c/o Keenan Oliver / Cover artwork: Lady Skollie</div>
 
 <section class="conversation">
   <p class="q">LN: Lost Libraries, Burnt Archives feels like a major turning point. Why?</p>
@@ -329,8 +331,8 @@ h1{max-width:none;margin:0;font-size:clamp(84px,15.5vw,240px);line-height:.72;le
   <p class="a"><a href="https://zasb.unibas.ch/de/newsdetails/publication-lost-libraries-burnt-archives/" target="_blank" rel="noreferrer">Read the University of Basel / Centre for African Studies record ↗</a></p>
 </section>
 
-<div class="full-image"><span class="placeholder">LOST LIBRARIES — FULL BLEED BOOK IMAGE / YOUR PHOTOGRAPH</span></div>
-<div class="caption">Lost Libraries, Burnt Archives / show the physicality of the book</div>
+<div class="full-image"><img src="/assets/lost-spread.jpg" alt="A spread from Lost Libraries, Burnt Archives" loading="lazy"></div>
+<div class="caption">Lost Libraries, Burnt Archives / Publication spread / Artefacts Office c/o Keenan Oliver</div>
 
 <section class="project-note">
   <div class="label">The object as an archive</div>
@@ -353,10 +355,10 @@ h1{max-width:none;margin:0;font-size:clamp(84px,15.5vw,240px);line-height:.72;le
 </div>
 
 <section class="double">
-  <div class="photo"><span class="placeholder">ZOHRA — EXHIBITION / INSTALLATION</span></div>
-  <div class="photo"><span class="placeholder">ZOHRA — TEXTILE / IMAGE / DETAIL</span></div>
+  <div class="photo"><img src="/assets/zohra-key.jpg" alt="Exhibition key visual for Zohra Opoku at Zeitz MOCAA" loading="lazy"></div>
+  <div class="photo"><img src="/assets/zohra-installation.jpg" alt="Installation view and didactics for Zohra Opoku at Zeitz MOCAA" loading="lazy"></div>
 </section>
-<div class="caption">We Proceed in the Footsteps of the Sunlight / Zeitz MOCAA / add image credits</div>
+<div class="caption">We Proceed in the Footsteps of the Sunlight / Zeitz MOCAA / Identity: Artefacts Office / Exhibition photography: Slater Studio &amp; Dillon Marsh</div>
 
 <section class="conversation">
   <p class="q">LN: Then there is Zohra Opoku at Zeitz MOCAA. This feels like another level of the practice.</p>
@@ -380,8 +382,8 @@ h1{max-width:none;margin:0;font-size:clamp(84px,15.5vw,240px);line-height:.72;le
   <p class="a"><a href="https://zeitzmocaa.museum/exhibition/we-proceed-in-the-footsteps-of-the-sunlight/" target="_blank" rel="noreferrer">Zeitz MOCAA exhibition record ↗</a> &nbsp; <a href="https://zeitzmocaa.museum/exhibition/we-proceed-in-the-footsteps-of-the-sunlight-symposium-book-launch/" target="_blank" rel="noreferrer">Monograph / book launch ↗</a></p>
 </section>
 
-<div class="full-image"><span class="placeholder">ZOHRA — MONOGRAPH / FULL SPREAD / YOUR PHOTOGRAPH</span></div>
-<div class="caption">We Proceed in the Footsteps of the Sunlight / 198 pages / add publication image credit</div>
+<div class="full-image"><img src="/assets/zohra-monograph.png" alt="We Proceed in the Footsteps of the Sunlight monograph designed by Artefacts Office" loading="lazy"></div>
+<div class="caption">We Proceed in the Footsteps of the Sunlight / 198-page monograph / Book design and typography: Artefacts Office</div>
 
 <section class="conversation">
   <p class="q">LN: The title itself is about movement.</p>
