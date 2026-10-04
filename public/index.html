@@ -146,7 +146,7 @@ button,input{font:inherit}
 </head>
 <body id="top">
 <header class="site-header">
-  <button class="menu-btn" aria-label="Main menu" onclick="toggleSidebar()">☰</button>
+  <button class="menu-btn" aria-label="Main menu" aria-controls="sidebar" aria-expanded="false" onclick="toggleSidebar()">☰</button>
   <div class="brand">
     <div class="brand-mark"><img src="assets/Wikipedia-logo-v2.svg" alt="Wikipedia logo"></div>
     <div>
@@ -182,19 +182,6 @@ button,input{font:inherit}
           <li><a href="#references">References</a></li>
         </ul>
       </div>
-      <div class="side-group">
-        <div class="side-heading">Related</div>
-        <ul class="side-list">
-          <li><a href="https://artefactsoffice.com" target="_blank" rel="noopener">Artefacts Office</a></li>
-          <li><a href="https://www.tygerbergartcentre.org.za/" target="_blank" rel="noopener">Tygerberg Art Centre</a></li>
-          <li><a href="https://archive.bubblegumclub.co.za/art-and-culture/autodidacts-associates-introduces-a-new-headwear-capsule-kaas-sharing-perspective-untold-narratives-mitchells-plein/" target="_blank" rel="noopener">KAAS — Bubblegum Club</a></li>
-        </ul>
-      </div>
-      </div>
-      <div class="side-group">
-        <div class="side-heading">Contribute</div>
-        <div class="side-note">This personal page uses encyclopedic conventions to document the development of Oliver's creative practice. The current project portfolio lives on Artefacts Office.</div>
-      </div>
     </aside>
 
     <main class="main">
@@ -202,11 +189,6 @@ button,input{font:inherit}
         <div class="tabset">
           <a class="tab active" href="#article">Article</a>
           <a class="tab" href="#references">References</a>
-        </div>
-        <div class="tabset article-actions">
-          <a class="tab active" href="#article">Read</a>
-          <a class="tab hide-mobile" href="#article">Profile</a>
-          <a class="tab hide-mobile" href="#references">References</a>
         </div>
       </div>
 
@@ -263,7 +245,6 @@ button,input{font:inherit}
             </li>
             <li><a href="#artefacts">Artefacts Office</a></li>
             <li><a href="#practice">Practice and approach</a></li>
-            <li><a href="#references">References</a></li>
             <li><a href="#references">References</a></li>
           </ol>
         </div>
@@ -362,7 +343,7 @@ button,input{font:inherit}
 function toggleSidebar(){
   const el=document.getElementById('sidebar');
   if(!el) return;
-  el.classList.toggle('sidebar-open');
+  const open=el.classList.toggle('sidebar-open'); const btn=document.querySelector('.menu-btn'); if(btn) btn.setAttribute('aria-expanded',String(open));
 }
 function goToSection(e){
   e.preventDefault();
@@ -381,6 +362,7 @@ function goToSection(e){
   }
   return false;
 }
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){const el=document.getElementById("sidebar");if(el){el.classList.remove("sidebar-open");const b=document.querySelector(".menu-btn");if(b)b.setAttribute("aria-expanded","false")}}});
 </script>
 </body>
 </html>
