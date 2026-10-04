@@ -11,8 +11,7 @@ const plexMono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   title: "Keenan Oliver — Practice",
   description:
-    "The practice of Keenan Oliver: visual systems, publications, images, objects and spatial interventions.",
-  other: { "codex-preview": "development" },
+    "Keenan Oliver is a designer and creative director from Lentegeur, Mitchells Plain, and founder of Artefacts Office.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
