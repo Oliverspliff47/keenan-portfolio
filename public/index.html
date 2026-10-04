@@ -37,7 +37,7 @@ button,input{font:inherit}
 .site-header{min-height:58px;border-bottom:1px solid var(--border-light);display:flex;align-items:center;padding:0 24px;gap:16px}
 .menu-btn{width:32px;height:32px;border:1px solid transparent;background:transparent;color:#202122;cursor:pointer;font-size:18px;line-height:1}
 .brand{display:flex;align-items:center;gap:10px;min-width:250px}
-.brand-mark{width:38px;height:38px;border:1px solid var(--border);border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-size:18px;background:#fff}
+.brand-mark{width:42px;height:42px;display:grid;place-items:center;background:#fff}.brand-mark img{width:42px;height:42px;display:block}
 .brand-title{font-family:var(--serif);font-size:20px;line-height:1.1;color:#202122}
 .brand-sub{font-size:11px;color:var(--sub);margin-top:1px}
 .header-search{flex:1;display:flex;justify-content:center}
@@ -84,7 +84,7 @@ button,input{font:inherit}
 /* Infobox */
 .infobox{float:right;width:290px;margin:0 0 18px 22px;border:1px solid var(--border);background:var(--panel);font-size:12px;line-height:1.45}
 .infobox-title{font-family:var(--serif);font-weight:700;font-size:17px;text-align:center;background:var(--panel-head);padding:7px;border-bottom:1px solid var(--border)}
-.infobox-image{margin:8px;border:1px solid var(--border);background:#f0f0f0;min-height:245px;display:grid;place-items:center;text-align:center;color:var(--muted);font-size:11px;padding:10px}
+.infobox-image{margin:8px;border:1px solid var(--border);background:#f0f0f0;display:grid;place-items:center;text-align:center;color:var(--muted);font-size:11px;padding:0}.infobox-image img{display:block;width:100%;height:auto;filter:grayscale(100%)}
 .infobox table{border-collapse:collapse;width:100%}
 .infobox th,.infobox td{padding:5px 7px;vertical-align:top;border-top:1px solid var(--border-light)}
 .infobox th{width:36%;font-weight:700;text-align:left}
@@ -147,7 +147,7 @@ button,input{font:inherit}
 <header class="site-header">
   <button class="menu-btn" aria-label="Main menu" onclick="toggleSidebar()">☰</button>
   <div class="brand">
-    <div class="brand-mark" aria-hidden="true">K</div>
+    <div class="brand-mark"><img src="https://upload.wikimedia.org/wikipedia/commons/8/80/Wikipedia-logo-v2.svg" alt="Wikipedia logo"></div>
     <div>
       <div class="brand-title">Keenan Oliver</div>
       <div class="brand-sub">an encyclopedic profile</div>
@@ -223,7 +223,7 @@ button,input{font:inherit}
       <article class="article-body">
         <aside class="infobox" aria-label="Keenan Oliver infobox">
           <div class="infobox-title">Keenan Oliver</div>
-          <div class="infobox-image">Primary portrait<br><span>Replace with editorial photograph</span></div>
+          <div class="infobox-image"><img src="assets/keenan-oliver-portrait.png" alt="Portrait of Keenan Oliver"></div>
           <table>
             <tr><th>Born</th><td>1993<br>Cape Town, South Africa</td></tr>
             <tr><th>Nationality</th><td>South African</td></tr>
@@ -285,7 +285,7 @@ button,input{font:inherit}
 <h3 id="cape-town">Cape Town and early visual culture</h3>
 <p>Oliver grew up in Cape Town, with Mitchells Plain forming an important part of the social and visual context of his early life. His relationship to design developed outside a straightforward graphic-design school-to-studio route. Music, popular culture, street life, photography, clothing and the visual language of everyday environments became part of a broader education in seeing and making.</p>
 <h3 id="tygerberg">Tygerberg Art Centre</h3>
-<p><a href="https://www.tygerbergartcentre.org.za/" rel="noopener" target="_blank">Tygerberg Art Centre</a> is an important reference point in Oliver's early relationship to art and design. The centre was established in 1975 and is one of nine art centres in the Western Cape. Its programme has included graphics, illustration, photography, fashion and textiles, alongside visual-arts subjects such as drawing and painting.<sup><a href="#ref-7">[7]</a></sup> The centre's emphasis on developing conceptual ability as well as practical skill provides useful context for the creative environment in which Oliver's early interests were formed.</p>
+<p><a href="https://www.tygerbergartcentre.org.za/" rel="noopener" target="_blank">Tygerberg Art Centre</a> was where Oliver took graphic design as an extra high-school subject. The centre’s design programme brought together <em>Design in Context</em>, theory and technique, and practical <em>Graphics and Printmaking</em>, alongside illustration, jewellery, ceramics, fashion and interior studies. Its broader visual-arts programme included drawing, painting and photography. This combination of visual research, conceptual development and hands-on making shaped the way Oliver learned to move from an idea to an image, page or printed object.<sup><a href="#ref-7">[7]</a></sup></p>
 <h3 id="marketing">Marketing and self-directed learning</h3>
 <p>Oliver attended The Settlers High School and later completed coursework in marketing at Cape Peninsula University of Technology between 2013 and 2015, including marketing strategy, consumer behaviour, brand communication and market research. The training did not constitute a conventional graphic-design degree; it instead became part of a wider education that connected audience, positioning and communication to later visual work.</p>
 <h2 id="career">Career</h2>
