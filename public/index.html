@@ -49,7 +49,7 @@ button,input{font:inherit}
 
 /* Main Vector-like shell */
 .page{max-width:var(--page-max);margin:0 auto;padding:0 28px 48px}
-.shell{display:grid;grid-template-columns:220px minmax(0, var(--article-max));gap:38px;align-items:start}
+.shell{display:block;max-width:var(--article-max);margin:0 auto}.main{max-width:var(--article-max)}
 .sidebar{display:none;position:fixed;z-index:30;left:0;top:58px;bottom:0;width:280px;padding:15px 20px;font-size:12px;color:var(--sub);background:#fff;border-right:1px solid var(--border-light);overflow:auto;box-shadow:4px 0 18px rgba(0,0,0,.08)}.sidebar.sidebar-open{display:block}
 .side-group{margin:0 0 18px}
 .side-heading{font-weight:600;color:#202122;border-bottom:1px solid var(--border-light);padding-bottom:5px;margin-bottom:6px}
@@ -163,7 +163,6 @@ button,input{font:inherit}
   <div class="header-tools">
     <a href="#contents" class="secondary-tool">Contents</a>
     <a href="#references" class="secondary-tool">References</a>
-    <a href="#references">References</a>
   </div>
 </header>
 
@@ -308,7 +307,7 @@ button,input{font:inherit}
 <h2 id="references">References</h2>
 <section class="references">
 <ol>
-<li id="ref-1">Bubblegum Club. <a href="https://bubblegumclub.co.za/art-and-culture/autodidacts-associates-introduces-a-new-headwear-capsule-kaas-sharing-perspective-untold-narratives-mitchells-plein/" rel="noopener" target="_blank">“Autodidacts &amp; Associates Introduces a new Headwear Capsule ‘kaas’...”</a> Coverage of <em>KAAS</em>, including project credits and Oliver's statement about defining a narrative.</li>
+<li id="ref-1">Bubblegum Club. <a href="https://bubblegumclub.co.za/art-and-culture/autodidacts-associates-introduces-new-headwear-capsule-kaas-sharing-perspective-untold-narratives-mitchells-plein/" rel="noopener" target="_blank">“Autodidacts &amp; Associates Introduces a new Headwear Capsule ‘kaas’...”</a> Coverage of <em>KAAS</em>, including project credits and Oliver's statement about defining a narrative.</li>
 <li id="ref-2">Bubblegum Club. <a href="https://archive.bubblegumclub.co.za/fashion/autodidacts-associates-want-you-to-stop-and-think-about-your-streetwear/" rel="noopener" target="_blank">“Autodidacts &amp; Associates want you to stop and think about your streetwear”</a>. Coverage of the Leaf Apparel archive and Oliver's writing on documentation and self-narration.</li>
 <li id="ref-3">Mail &amp; Guardian. <a href="https://mg.co.za/friday/2024-07-05-a-treat-for-the-ears-and-more/" rel="noopener" target="_blank">“Discovering Cape Town’s eclectic listening bars, where nightlife is redefined”</a>. Published 5 July 2024.</li>
 <li id="ref-4">University of Basel, Centre for African Studies. <a href="https://zasb.unibas.ch/de/newsdetails/publication-lost-libraries-burnt-archives/" rel="noopener" target="_blank">“Publication: Lost Libraries, Burnt Archives”</a>. Publication context, contributors and distribution.</li>
@@ -350,7 +349,7 @@ function goToSection(e){
   const input=document.getElementById('siteSearch');
   const q=input.value.trim().toLowerCase();
   if(!q) return false;
-  const candidates=[...document.querySelectorAll('h1,h2,h3,h4,p,li')];
+  const candidates=[...document.querySelectorAll('.article-body h1,.article-body h2,.article-body h3,.article-body h4,.article-body p')];
   const hit=candidates.find(el=>el.textContent.toLowerCase().includes(q));
   if(hit){
     hit.scrollIntoView({behavior:'smooth',block:'start'});
