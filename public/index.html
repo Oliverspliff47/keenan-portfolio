@@ -79,9 +79,77 @@ h1{max-width:1450px;margin:0 auto;font-size:clamp(72px,11vw,180px);font-weight:9
   .project-note{grid-template-columns:1fr;gap:20px;margin-bottom:85px}
   .context-strip{grid-template-columns:1fr;gap:22px}.credits{padding-bottom:85px}.end{padding-top:90px}
 }
+
+/* Editorial system: a working grid with magazine scale. */
+:root{--red:#e1261c;--page:#f4f4f1}
+body{background:var(--page);font-family:Arial,Helvetica,sans-serif}
+.site-nav{position:sticky;top:0;z-index:20;display:grid;grid-template-columns:180px 1fr auto;gap:24px;align-items:center;padding:12px 18px;border-bottom:1px solid var(--ink);background:rgba(244,244,241,.96);font-size:14px;font-weight:800;letter-spacing:-.02em}
+.site-nav__mark{font-size:25px;text-decoration:none;letter-spacing:-.07em}
+.site-nav nav{display:flex;gap:18px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+.site-nav nav::-webkit-scrollbar{display:none}
+.site-nav nav a,.site-nav__office{text-decoration:none}
+.site-nav nav a:first-child{color:var(--red)}
+.site-nav nav a:hover,.site-nav__office:hover{color:var(--red);opacity:1}
+.article-top{padding:38px 18px 0;text-align:left}
+.article-top .eyebrow{margin:0 0 18px;color:var(--red)}
+h1{max-width:none;margin:0;font-size:clamp(84px,15.5vw,240px);line-height:.72;letter-spacing:-.105em}
+.meta{justify-content:flex-start;margin:46px 0 0}
+.standfirst{max-width:1250px;margin:34px 0 52px;font-size:clamp(29px,4.2vw,67px);line-height:.94;letter-spacing:-.062em}
+.lead-image{min-height:0;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);background:#000}
+.lead-image img{height:min(80vh,980px);object-fit:contain}
+.caption{text-align:left;background:var(--page);border-color:var(--ink)}
+.spread{padding-top:64px}
+.spread-grid,.double{gap:8px}
+.photo{min-height:68vh;background:#ddd;border:1px solid var(--ink)}
+.placeholder{max-width:34ch;color:#111;font-size:11px;line-height:1.15}
+.spread-note{max-width:none;margin:8px 0 0;padding:0 0 0 25%;text-align:left;font-size:13px}
+.conversation{max-width:none;margin:0;padding:96px 18px;display:grid;grid-template-columns:minmax(220px,1fr) minmax(0,2.2fr);column-gap:6vw}
+.q{grid-column:1;margin:0 0 42px;align-self:start;position:sticky;top:70px;font-size:clamp(18px,1.8vw,28px);line-height:1.06}
+.a{grid-column:2;margin:0 0 30px;max-width:930px;font-size:clamp(19px,2vw,31px);font-weight:400;line-height:1.32;letter-spacing:-.03em}
+.a.serif{font-family:Georgia,"Times New Roman",serif;font-size:clamp(32px,4vw,65px);font-weight:400;line-height:.98}
+.conversation a{text-decoration-thickness:1px;text-underline-offset:4px}
+.pull{max-width:none;margin:0;padding:80px 18px;background:var(--red);color:#000}
+.pull p{text-align:left;font-size:clamp(58px,10vw,155px);line-height:.76}
+.project-intro{max-width:none;margin:0;padding:120px 18px 60px;text-align:left;border-top:1px solid var(--ink)}
+.project-intro .kicker{margin-bottom:14px;color:var(--red)}
+.project-intro h2{max-width:14ch;font-size:clamp(65px,11vw,170px);line-height:.76}
+.project-intro p{max-width:930px;margin:34px 0 0;font-family:Arial,Helvetica,sans-serif;font-size:clamp(25px,3.2vw,51px);font-weight:800;line-height:.98}
+.project-facts{margin:0;border-color:var(--ink)}
+.project-facts div{padding:14px 18px;font-size:11px}
+.context-strip{background:var(--red);color:#000;border-top:1px solid #000;border-bottom:1px solid #000}
+.context-strip .label{color:#000}
+.statement{max-width:none;margin:0;padding:110px 18px;text-align:left;font-family:Arial,Helvetica,sans-serif;font-size:clamp(55px,8vw,125px);font-weight:900;line-height:.82}
+.full-image{min-height:75vh;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+.project-note{max-width:none;margin:0;padding:55px 18px 110px;grid-template-columns:1fr 2.2fr}
+.project-note p{max-width:900px;font-size:18px}
+.credits{max-width:none;margin:0;padding:95px 18px;border-top:1px solid var(--ink)}
+.end{padding:95px 18px 30px;text-align:left}
+.end h2{max-width:none;margin:0 0 75px;font-size:clamp(85px,16vw,245px);line-height:.68}
+.end a,.end small{max-width:none}
+@media(max-width:800px){
+  .site-nav{grid-template-columns:auto 1fr;padding:10px 12px}.site-nav__office{display:none}.site-nav nav{justify-content:flex-end}
+  .article-top{padding:28px 12px 0}h1{font-size:21vw}.standfirst{margin-top:28px;font-size:9vw}
+  .spread{padding:38px 12px 0}.spread-note{padding-left:0}
+  .conversation{display:block;padding:64px 12px}.q{position:static;margin:48px 0 14px;padding-top:12px;border-top:1px solid var(--ink)}.q:first-child{margin-top:0}.a{font-size:20px}.a.serif{font-size:38px}
+  .pull{padding:62px 12px}.project-intro{padding:80px 12px 42px}.project-intro h2{font-size:17vw}
+  .project-facts{margin:0 12px}.double{padding:0 12px}.context-strip,.statement{padding-left:12px;padding-right:12px}
+  .project-note{padding:45px 12px 80px}.credits{padding:70px 12px}.end{padding:75px 12px 28px}
+}
 </style>
 </head>
 <body>
+
+<header class="site-nav">
+  <a class="site-nav__mark" href="#top">KO / AO</a>
+  <nav aria-label="Article index">
+    <a href="#top">Making Records</a>
+    <a href="#origin">Origins</a>
+    <a href="#babbi">Babbi</a>
+    <a href="#lost-libraries">Lost Libraries</a>
+    <a href="#zohra">Zohra Opoku</a>
+  </nav>
+  <a class="site-nav__office" href="https://artefactsoffice.com">Artefacts Office ↗</a>
+</header>
 
 <main id="top">
 
@@ -90,7 +158,7 @@ h1{max-width:1450px;margin:0 auto;font-size:clamp(72px,11vw,180px);font-weight:9
   <h1>Making Records</h1>
   <div class="meta"><span>October 2026</span><span>Lubabalo Nkobo</span></div>
   <p class="standfirst">
-    Long-time friends and collaborators Lubabalo Nkobo and Keenan Oliver talk about the things that became the foundations of the practice — and the projects where those ideas really matured: Babbi, Lost Libraries, Burnt Archives, and Zohra Opoku's We Proceed in the Footsteps of the Sunlight.
+    Long-time friends and collaborators Lubabalo Nkobo and Keenan Oliver trace a practice built through drawing, publishing, place and the making of records — from KAAS and Babbi to Lost Libraries, Burnt Archives and Zohra Opoku.
   </p>
   <div class="lead-image"><img src="/keenan-oliver-office-portrait.png" alt="Photocopied self-portrait of Keenan Oliver with the word Office and assembled graphic elements"></div>
   <div class="caption">Keenan Oliver / Self-portrait / Office</div>
@@ -104,7 +172,7 @@ h1{max-width:1450px;margin:0 auto;font-size:clamp(72px,11vw,180px);font-weight:9
   <p class="spread-note">“I picked up a pen and pencil when I was young and never really put them down.”</p>
 </section>
 
-<section class="conversation">
+<section class="conversation" id="origin">
   <p class="q">LUBABALO NKOBO: You’ve told me before that drawing came first. What do you remember about that?</p>
   <p class="a">KEENAN OLIVER: I don't remember deciding that I wanted to become a designer. I remember drawing. I liked making things with a pen and pencil and trying to make the things I was seeing exist again on paper.</p>
   <p class="a">Then in high school I started taking graphics more seriously through my design subject and my time at Tygerberg Art Centre. That was probably the first time I understood that the things I was instinctively doing had a language and a discipline around them.</p>
@@ -146,7 +214,7 @@ h1{max-width:1450px;margin:0 auto;font-size:clamp(72px,11vw,180px);font-weight:9
 </section>
 
 <!-- BABBI -->
-<section class="project-intro">
+<section class="project-intro" id="babbi">
   <div class="kicker">The practice became a place</div>
   <h2>Babbi</h2>
   <p>One of the clearest moments where design, music, hospitality, visual culture and community stopped being separate things.</p>
@@ -220,7 +288,7 @@ h1{max-width:1450px;margin:0 auto;font-size:clamp(72px,11vw,180px);font-weight:9
 <div class="caption">Keep this archive human: people, records, food, details, not only the finished identity.</div>
 
 <!-- LOST LIBRARIES -->
-<section class="project-intro">
+<section class="project-intro" id="lost-libraries">
   <div class="kicker">University of Cape Town / 2023</div>
   <h2>Lost Libraries,<br>Burnt Archives</h2>
   <p>A publication about what remains after an archive is destroyed — and about the making of another record from the loss.</p>
@@ -271,7 +339,7 @@ h1{max-width:1450px;margin:0 auto;font-size:clamp(72px,11vw,180px);font-weight:9
 <section class="statement">A book can be a record of loss. It can also be the beginning of another record.</section>
 
 <!-- ZOHRA -->
-<section class="project-intro">
+<section class="project-intro" id="zohra">
   <div class="kicker">Zeitz MOCAA / 2026 monograph</div>
   <h2>We Proceed in the Footsteps of the Sunlight</h2>
   <p>Zohra Opoku's first museum survey on the African continent — and a project about how identity, memory and material can move between image, exhibition and book.</p>
